@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.6.2)
+project(project)
+
+set(CMAKE_CXX_STANDARD 11)
+include_directories(antlr/local)
+add_executable(project main.cpp Constructor.cpp Constructor.h antlr/subCBaseVisitor.cpp antlr/subCBaseVisitor.h antlr/subCLexer.cpp antlr/subCLexer.h antlr/subCParser.cpp antlr/subCParser.h antlr/subCVisitor.cpp antlr/subCVisitor.h structure/Program.cpp structure/Program.h structure/Function.cpp structure/Function.h structure/Bloc.cpp structure/Bloc.h structure/Statement.cpp structure/Statement.h structure/Expression.cpp structure/Expression.h structure/Declaration.cpp structure/Declaration.h structure/While.cpp structure/While.h structure/If.cpp structure/If.h structure/Parameter.cpp structure/Parameter.h structure/Type.cpp structure/Type.h structure/Return.cpp structure/Return.h structure/Break.cpp structure/Break.h structure/CompoundStatement.cpp structure/CompoundStatement.h structure/FunctionCall.cpp structure/FunctionCall.h structure/StructStatement.cpp structure/StructStatement.h structure/DeclStatement.cpp structure/DeclStatement.h structure/VarDeclaration.cpp structure/VarDeclaration.h structure/Assignment.cpp structure/Assignment.h structure/Identifier.cpp structure/Identifier.h structure/IdentifierArr.cpp structure/IdentifierArr.h structure/Constant.cpp structure/Constant.h structure/BinaryExpression.cpp structure/BinaryExpression.h structure/UnaryExpression.cpp structure/UnaryExpression.h structure/Continue.cpp structure/Continue.h structure/PutChar.cpp structure/PutChar.h structure/GetChar.cpp structure/GetChar.h structure/Scope.cpp structure/Scope.h IR/IRInstr.cpp IR/IRInstr.h IR/BasicBlock.cpp IR/BasicBlock.h IR/CFG.cpp IR/CFG.h)
+
+target_link_libraries (project ${CMAKE_CURRENT_SOURCE_DIR}/antlr/local/lib/libantlr4-runtime.a )
+target_include_directories(project PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/antlr/local/include/antlr4-runtime ${CMAKE_CURRENT_SOURCE_DIR})
